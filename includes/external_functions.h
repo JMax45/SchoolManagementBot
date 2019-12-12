@@ -6,3 +6,4 @@
 #include "../modules/messages.cpp"    		 // messages functions
 #include "../modules/days.cpp"    		 	 // days functions
 #include "../modules/vectors.cpp"            // vectors
+#include "../modules/bot_functions.cpp"      // bot functions

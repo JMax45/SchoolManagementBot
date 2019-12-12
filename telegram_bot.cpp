@@ -12,7 +12,7 @@
 #include <exception>
 
 int main() {
-    TgBot::Bot bot("YOUR_TOKEN");
+    TgBot::Bot bot(get_token());
     bool configuration_calendar = false;
     int32_t message_delete_id;
     std::vector<std::string> all_days = get_all_days_vector();
