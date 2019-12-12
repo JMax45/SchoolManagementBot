@@ -1,0 +1,5 @@
+[1] /see-users-number -> shows the number of users registered in the system.
+[2] /delacc           -> deletes an account (password required).
+
+settings - Configure/modify your calendar
+getd - Get the schedule for a specific day
