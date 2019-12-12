@@ -2,6 +2,8 @@
 [![Code Climate](https://codeclimate.com/github/JMax45/SchoolManagementBot/badges/gpa.svg)](https://codeclimate.com/github/JMax45/SchoolManagementBot/coverage)
 [![Issue Count](https://codeclimate.com/github/JMax45/SchoolManagementBot/badges/issue_count.svg)](https://codeclimate.com/github/JMax45/SchoolManagementBot)
 
+![SMB](readme_media/logo.png)
+
 **SMB** is a C++ telegram bot for organizing your school life.
 
 ## Installation
