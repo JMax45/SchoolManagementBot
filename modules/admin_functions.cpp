@@ -90,3 +90,31 @@ std::string delete_account(std::string user_id){
 	}
 	outfile.close();
 }
+
+void wipedata(){
+	// Accounts
+	// chat_id
+	std::ofstream outfile;
+	outfile.open("saves/accounts/chat_id/id.dat");
+	outfile << "[id.dat]\n";
+	outfile.close();
+
+	// registration_date
+	outfile.open("saves/accounts/registration_date/registration_date.dat");
+	outfile << "[registration_date.dat]\n";
+	outfile.close();
+
+	// registration_date
+	outfile.open("saves/accounts/user_privileges/privileges.dat");
+	outfile << "[privileges.dat]\n";
+	outfile.close();	
+
+	system("exec rm -r saves/configuration/days/*");
+	system("exec rm -r saves/days/friday/*");
+	system("exec rm -r saves/days/monday/*");
+	system("exec rm -r saves/days/saturday/*");
+	system("exec rm -r saves/days/thursday/*");
+	system("exec rm -r saves/days/tuesday/*");
+	system("exec rm -r saves/days/wednesday/*");
+
+}

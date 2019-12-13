@@ -190,7 +190,10 @@ int main() {
             bot.getApi().sendMessage(message->chat->id, "Comando non riconosciuto.");
         }    
     });
-
+    bot.getEvents().onCommand("wipedata", [&bot](TgBot::Message::Ptr message) {
+        wipedata();           
+    });
+    
     bot.getEvents().onAnyMessage([&bot,&configuration_calendar,&all_days,&all_days_italian](TgBot::Message::Ptr message) {
         std::cout << get_time() << " ";
         printf("User wrote %s\n", message->text.c_str());
