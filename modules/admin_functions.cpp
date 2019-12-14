@@ -107,7 +107,12 @@ void wipedata(){
 	// registration_date
 	outfile.open("saves/accounts/user_privileges/privileges.dat");
 	outfile << "[privileges.dat]\n";
-	outfile.close();	
+	outfile.close();
+
+	// registration_date
+	outfile.open("bot/token.dat");
+	outfile << "Your_Token";
+	outfile.close();		
 
 	system("exec rm -r saves/configuration/days/*");
 	system("exec rm -r saves/days/friday/*");
