@@ -29,9 +29,9 @@ git clone https://github.com/JMax45/SchoolManagementBot
 
 ## Usage
 
-Change the bot token in line 15.
+Change the bot token in file _bot/token.dat_.
 ```bash
-TgBot::Bot bot("YOUR_TOKEN");
+Your_Token
 ```
 
 ## Compilation
