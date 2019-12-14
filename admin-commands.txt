@@ -1,6 +1,6 @@
 [1] /see-users-number -> shows the number of users registered in the system.
 [2] /delacc           -> deletes an account (password required).
-[3] /wipe             -> wipe all the data.
+[3] /wipedata         -> wipes all the data.
 
 settings - Configure/modify your calendar
 getd - Get the schedule for a specific day
