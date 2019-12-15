@@ -43,7 +43,7 @@ int main() {
 
         else
         {
-            start_saves(message_chat_id, all_days); // Salva i dati dell'utente 
+            create_user(message_chat_id, all_days);
             save_registration_date("saves/accounts/registration_date/registration_date.dat");
             printf("New user registered in the system.\n");
             bot.getApi().sendMessage(message->chat->id, "Welcome to the School Management Bot.");
@@ -78,7 +78,7 @@ int main() {
 
     bot.getEvents().onCommand("today", [&bot,&all_days_short,&all_days,&configuration_calendar](TgBot::Message::Ptr message) {  
         if(configuration_calendar==true){
-            bot.getApi().sendMessage(message->chat->id, "È necessario finire la configurazione dell'orario prima di eseguire questo comando.");
+            bot.getApi().sendMessage(message->chat->id, "It is necessary to finish the schedule configuration before executing this command.");
         }
         else{
             std::string day_of_the_week = get_date();
@@ -86,7 +86,7 @@ int main() {
             int user_position = get_user_position(id_to_string);
 
             if (day_of_the_week == "Sun"){
-                bot.getApi().sendMessage(message->chat->id, "L'orario per la domenica non è disponibile.");
+                bot.getApi().sendMessage(message->chat->id, "Sunday schedule is not available.");
             }
             else{
                 std::string message_to_send = get_day_schedule(user_position, day_of_the_week, all_days_short, id_to_string, all_days, 0);
@@ -97,7 +97,7 @@ int main() {
 
     bot.getEvents().onCommand("tomorrow", [&bot,&all_days_short,&all_days,&configuration_calendar](TgBot::Message::Ptr message) {
         if(configuration_calendar==true){
-            bot.getApi().sendMessage(message->chat->id, "È necessario finire la configurazione dell'orario prima di eseguire questo comando.");
+            bot.getApi().sendMessage(message->chat->id, "It is necessary to finish the schedule configuration before executing this command.");
         }
         else{        
             std::string day_of_the_week = get_date();
@@ -105,7 +105,7 @@ int main() {
             int user_position = get_user_position(id_to_string);
 
             if (day_of_the_week == "Sun"){
-                bot.getApi().sendMessage(message->chat->id, "L'orario per la domenica non è disponibile.");
+                bot.getApi().sendMessage(message->chat->id, "Sunday schedule is not available.");
             }
             else{
                 std::string message_to_send = get_day_schedule(user_position, day_of_the_week, all_days_short, id_to_string, all_days, 1);
@@ -150,7 +150,7 @@ int main() {
  
     bot.getEvents().onCommand("getd", [&bot, &all_days_short, &all_days, &keyboard, &message_delete_id, &configuration_calendar](TgBot::Message::Ptr message) {
         if(configuration_calendar==true){
-            bot.getApi().sendMessage(message->chat->id, "È necessario finire la configurazione dell'orario prima di eseguire questo comando.");
+            bot.getApi().sendMessage(message->chat->id, "It is necessary to finish the schedule configuration before executing this command.");
         }
         else{        
             std::string id_to_string = std::to_string(message->chat->id); 
@@ -163,7 +163,7 @@ int main() {
                 message_from_user = "/getd";
             }
             if (message_from_user == "domenica"){
-                bot.getApi().sendMessage(message->chat->id, "L'orario per la domenica non è disponibile.");
+                bot.getApi().sendMessage(message->chat->id, "Sunday schedule is not available.");
             }
             else if (message_from_user == "/getd"){
                 bot.getApi().sendMessage(message->chat->id, "Scegli il giorno: ", false, 0, keyboard);
@@ -179,7 +179,7 @@ int main() {
     // Admin commands
     bot.getEvents().onCommand("see_users_number", [&bot, &configuration_calendar](TgBot::Message::Ptr message) {
         if(configuration_calendar==true){
-            bot.getApi().sendMessage(message->chat->id, "È necessario finire la configurazione dell'orario prima di eseguire questo comando.");
+            bot.getApi().sendMessage(message->chat->id, "It is necessary to finish the schedule configuration before executing this command.");
         }
         else{
             std::string id_to_string = std::to_string(message->chat->id); 
@@ -190,13 +190,13 @@ int main() {
                 bot.getApi().sendMessage(message->chat->id, message_to_display);
             }
             else{
-                bot.getApi().sendMessage(message->chat->id, "Comando non riconosciuto");
+                bot.getApi().sendMessage(message->chat->id, "Command not recognized.");
             } 
         }      
     });
     bot.getEvents().onCommand("delacc", [&bot, &configuration_calendar](TgBot::Message::Ptr message) {
         if(configuration_calendar==true){
-            bot.getApi().sendMessage(message->chat->id, "È necessario finire la configurazione dell'orario prima di eseguire questo comando.");
+            bot.getApi().sendMessage(message->chat->id, "It is necessary to finish the schedule configuration before executing this command.");
         }
         else{
             std::string id_to_string = std::to_string(message->chat->id); 
@@ -210,7 +210,7 @@ int main() {
                 bot.getApi().sendMessage(message->chat->id, "Account Deleted.");
             }
             else{
-                bot.getApi().sendMessage(message->chat->id, "Comando non riconosciuto.");
+                bot.getApi().sendMessage(message->chat->id, "Command not recognized.");
             }    
         }    
     });
@@ -222,7 +222,7 @@ int main() {
     		bot.getApi().sendMessage(message->chat->id, "All data has been deleted.");
     	}
     	else{
-    		bot.getApi().sendMessage(message->chat->id, "Comando non riconosciuto.");
+    		bot.getApi().sendMessage(message->chat->id, "Command not recognized.");
     	}	           
     });
     
